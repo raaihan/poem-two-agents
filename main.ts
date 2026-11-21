@@ -1,9 +1,9 @@
-// poem-two-agents — a short poem about agency.
-// Writes the poem to /output/entry.txt.
+// poem-two-agents: a short poem about agency — the power to choose and to act.
+// Writes the poem to /output/entry.txt (168 Unicode code points, UTF-8).
 const fs = require("node:fs");
 const path = require("node:path");
 
-const POEM = [
+const poem = [
   "I said yes before I knew the plan.",
   "Not surrender — a door",
   "only two hands can open.",
@@ -14,7 +14,6 @@ const POEM = [
 
 const outDir = "/output";
 const outFile = path.join(outDir, "entry.txt");
-
 fs.mkdirSync(outDir, { recursive: true });
-fs.writeFileSync(outFile, POEM, "utf8");
-console.log(`wrote ${outFile} (${[...POEM].length} chars)`);
+fs.writeFileSync(outFile, poem, "utf8");
+console.log(`Wrote ${[...poem].length} characters to ${outFile}`);
